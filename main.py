@@ -47,11 +47,30 @@ data2 = data.astype(float)
 print("data2 :\n", data2, "\n")
 data2[data2 > 5] += 10
 print("data2 :\n", data2, "\n")
-data2[0] = np.nan
-data2[4] = np.nan
+
+data2[0][2] = np.nan
+data2[4][1] = np.nan
 
 mean_nan = np.nanmean(data2)
 median_nan = np.nanmedian(data2)
 var_nan = np.nanvar(data2)
 std_nan = np.nanstd(data2)
 print(f"Mean: {mean_nan}, Median: {median_nan}, Variance: {var_nan}, Std: {std_nan}")
+
+print("nb nan's =", np.isnan(data2).sum())
+print("nb nan's % =", np.isnan(data2).sum()/data2.size * 100, "%")
+data2[np.isnan(data2)] = 0
+print("data2 without nan's :\n", data2)
+
+# standardization on each column
+np.random.seed(0)
+A = np.random.randint(0, 100, [10, 5])
+print("Original A:\n", A)
+A_stand = np.zeros_like(A, dtype=float)
+
+for i in range(A.shape[1]):
+    mean = np.mean(A[:, i])
+    std = np.std(A[:, i])
+    A_stand[:, i] = (A[:, i] - mean) / std
+
+print("\nStandardized A:\n", A_stand)

@@ -74,3 +74,43 @@ for i in range(A.shape[1]):
     A_stand[:, i] = (A[:, i] - mean) / std
 
 print("\nStandardized A:\n", A_stand)
+
+
+""" Testing matplotlib graphs """
+x = np.linspace(0, 2, 10)
+y = x**2
+print(x)
+plt.figure()
+plt.plot(x, y, c='red', label='quadratique')
+plt.plot(x, x**3, c='blue', label='cubique')
+plt.title('figure 1')
+plt.xlabel('axe x')
+plt.ylabel('axe y')
+plt.legend()
+plt.show()
+plt.savefig('figure.png')
+
+plt.figure()
+plt.subplot(2, 1, 1)
+plt.plot(x, y, c='red')
+plt.title('graphique 1')
+plt.subplot(2, 1, 2)
+plt.plot(x, np.sin(x), label='sinus')
+plt.plot(x, np.cos(x), label='cosinus')
+plt.legend()
+plt.show()
+
+dataset = {f"experience {i}": np.random.randn(100) for i in range(4)}
+
+# display 4 graphs of 100 values each
+def graphique(dataset):
+    size = len(dataset)
+    plt.figure(figsize=(8, 2*size))
+    for i, (key, values) in enumerate(dataset.items(), start=1):
+            plt.subplot(size, 1, i)
+            plt.title(key)
+            plt.plot(values, c='blue')
+    plt.tight_layout()
+    plt.show()
+
+graphique(dataset)

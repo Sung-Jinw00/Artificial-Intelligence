@@ -102,7 +102,7 @@ plt.show()
 
 dataset = {f"experience {i}": np.random.randn(100) for i in range(4)}
 
-# display 4 graphs of 100 values each
+# display n graphs of x values each
 def graphique(dataset):
     size = len(dataset)
     plt.figure(figsize=(8, 2*size))

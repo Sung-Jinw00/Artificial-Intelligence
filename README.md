@@ -38,7 +38,7 @@ This project includes several AI-related features, such as:
 You can clone this repository and run the Python scripts directly.
 
 ```bash
-git clone git@github.com:Sung-Jinw00/Artificial-Intelligence.git AI-Project
+git clone git@github.com:Louis-Cagnion/Artificial-Intelligence.git AI-Project
 cd AI-Project
 ```
 

@@ -5,7 +5,16 @@ __pycache__/
 
 # C extensions
 *.so
+
+# CUDA / XLA / libdevice
 libdevice*.bc
+*.ptx
+*.cubin
+
+# TensorFlow logs / checkpoints
+checkpoint
+events.out.tfevents.*
+saved_model/
 
 # Distribution / packaging
 .Python

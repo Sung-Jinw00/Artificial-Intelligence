@@ -59,4 +59,4 @@ After that, open the scripts in your favorite Python IDE (Spyder, PyCharm, VSCod
 
 ## 🧑‍💻 Author <a id="author"></a>
 
-Created and maintained by @Sung_Jinw00
+Created and maintained by @Louis-Cagnion
